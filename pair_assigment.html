@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .container {
+            padding: 30px 50px 0px;
+        }
+
+        /*9*/
+
+        .blue-text {
+            color: blue;
+        }
+
+        #underline {
+            text-decoration: underline;
+        }
+
+        [custom-attr="red"] {
+            background: red;
+        }
+
+        #li-hover:hover {
+            border: 1px red dashed;
+        }
+
+        .selector-css li:last-child {
+            text-decoration: line-through;
+        }
+        /*end 9*/
+
+        /*10*/
+        .text-link {
+            font-family: "Lucida";
+            font-size: 12px;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .text-link:visited {
+            color: #0f0;
+        }
+        .text-link:hover {
+            color: #f00;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .image-link img{
+            width: 200px;
+            object-fit: cover;
+        }
+        /*end 10*/
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div>
+        <h3>6. Find out a piece of Java code and make it appear on your web page the same way it appears in the text
+            editor.</h3>
+        <div>
+            <h5>Solution:</h5>
+            <pre>
+                public class MyClass {
+                    static void myMethod() {
+                    System.out.println("I just got executed!");
+                    }
+
+                    public static void main(String[] args) {
+                        myMethod();
+                    }
+                }
+            </pre>
+        </div>
+    </div>
+
+    <div>
+        <h3>7.There are three different ways of adding CSS styles on an (X)HTML page. How? What are the benefits of each
+            way? </h3>
+        <div>
+            <ul>
+                <li>
+                    <p>In-lined: the css script is placed next to the html tag as the value of the style attribute.</p>
+                    <ul>
+                        <li>
+                            How: &ltp&gt style=”color: red”>hello world &lt/p&gt
+                        </li>
+                        <li>
+                            Pros: Highest priority means that it can override all the given styles. Quickly to style and
+                            good to test the style attribute (reviewing the style is beautiful before put them to the
+                            other css file).
+                        </li>
+                        <li>
+                            Cons: Style individually, repeated code if the style apply for many place in project, messy
+                            the code, hard to maintain later.
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <p>Embedded in the head of HTML file (between &ltstyle&gt tag).</p>
+                    <ul>
+                        <li>
+                            How: &lthead&gt&ltstyle type=”text/css”&gt p { color: red }&lt/style&gt&lt/head&gt
+                        </li>
+                        <li>
+                            Pros: More structure than in-lined style, can apply class or id selector for styling so that
+                            write less and more beautiful code.
+                        </li>
+                        <li>
+                            Cons: Only apply for one HTML that CSS is embedded, if you need the same style in other
+                            HTML, you have to copy.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>External style: Write css by it’s own file with extension .css and then includes it in HTML
+                        file.</p>
+                    <ul>
+                        <li>
+                            How: create css file and style in that. Then link the css file to html file in head tag like
+                            : &ltlink href="path/of/css_file.css" rel="stylesheet" type="text/css" /&gt
+                        </li>
+                        <li>
+                            Pros: Code is more structure, css can apply for many html file, easy to maintain and
+                            reusable.
+                        </li>
+                        <li>
+                            Cons: a little bit slower developing time than two solutions above, due to create extra
+                            files, can be override by In-lined style or Embedded style (in case the embedded code is
+                            placed after the external css file in html file).
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h3>8. How to create a nested list looking more or less as follows:</h3>
+        <div>
+            <h5>Solution:</h5>
+            <p>Placing the snippet below in between body tag of html file.</p>
+            <pre>
+                &ltul style="list-style-type: square;"&gt
+                    &ltli&gtBanana&lt/li&gt
+                    &ltli&gtApple
+                    &ltol style="list-style-type: lower-alpha"&gt
+                        &ltli&gtPinja&lt/li&gt
+                    &ltli&gtSamo&lt/li&gt
+                    &lt/ol&gt
+                    &lt/li&gt
+                    &ltli&gtOrange&lt/li&gt
+                &lt/ul&gt
+            </pre>
+        </div>
+
+        <p>Make an example of a nested list with images as list items. </p>
+        <h5>Solution: </h5>
+        <ul style="list-style-type: square;">
+            <li>Item</li>
+            <li>Nested Images
+                <ol style="list-style-type: circle">
+                    <li>
+                        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg"
+                             alt="">
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>9.What are selectors in CSS? Give at least five examples of different kind of selectors (basic type
+            selectors, class, id, and attribute selectors). Show them in use on your (X)HTML page. </h3>
+        <div>
+            <p>
+                CSS selectors are used to select the content you want to style. Selectors are the part of CSS rule set.
+                CSS selectors select HTML elements according to its id, class, type, attribute etc.
+            </p>
+            <p>Example: (teacher can review in the &ltstyle&gt tag in this html file)</p>
+            <ul class="selector-css">
+                <li class="blue-text">Class style</li>
+                <li id="underline">Id Style</li>
+                <li custom-attr="red">Attribute style</li>
+                <li id="li-hover">hover style</li>
+                <li>Last child style</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div>
+        <h3>10. Create at least the following kinds of two links on your web page: </h3>
+        <ol style="list-style-type: lower-alpha">
+            <li style="margin-bottom: 10px">
+                <p>
+                    a text link, which shall appear first with font Lucida of size 12px and color #555; The
+                    link text shall not be underlined. When the user brings the mouse over the link text it
+                    shall change color, be bolded and be a bit larger. After the user has visited the link the
+                    looks of the link text shall be otherwise the same as in the start, but the color shall be
+                    different.
+                </p>
+                <p>Solution: note that when hover it is red and when visited it is green</p>
+                <div>
+                    <a class="text-link" href="https://reppu.lamk.fi"/>Reppu</a>
+                </div>
+            </li>
+            <li>
+                <p>
+                    an image link without borders around the image. The resource which the link shall
+                    open shall be opened in a new window.
+                </p>
+                <p>Solution:</p>
+                <div>
+                    <a class="image-link" target="_blank" href="https://letrananhvu.github.io/"/>
+                        <img src="https://letrananhvu.github.io/img/react-restaurant.png" alt="portfolio-react">
+                    </a>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>
