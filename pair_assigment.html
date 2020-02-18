@@ -2,8 +2,67 @@
 <html>
 <head>
     <style type="text/css">
+        body {
+            font-size: 18px;
+            font-family: "IBM Plex Sans", sans-serif;
+        }
+
         .container {
             padding: 30px 50px 0px;
+        }
+
+        .highlight {
+            /*color: red;*/
+            position: relative;
+        }
+
+        pre {
+            background: #07ff0747;
+            position: relative;
+            padding: 20px;
+            border-radius: 0 50px 0 0;
+        }
+
+        pre:before {
+            background: #00ff00;
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .q-header {
+            display: inline-block;
+            font-size: 30px;
+            font-weight: 200;
+            background: #c3ffc3;
+            border-radius: 0 116px 0 61px;
+        }
+
+        .info {
+            text-align: right;
+        }
+
+        .info p {
+            font-size: 28px;
+            font-weight: lighter;
+        }
+
+        .highlight:after {
+            background: #4bff4bab;
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            bottom: 1px;
+            left: 0;
+            z-index: -1;
+
         }
 
         /*9*/
@@ -27,6 +86,7 @@
         .selector-css li:last-child {
             text-decoration: line-through;
         }
+
         /*end 9*/
 
         /*10*/
@@ -40,42 +100,282 @@
         .text-link:visited {
             color: #0f0;
         }
+
         .text-link:hover {
             color: #f00;
             font-size: 15px;
             font-weight: bold;
         }
-        .image-link img{
+
+        .image-link img {
             width: 200px;
             object-fit: cover;
         }
+
         /*end 10*/
+
+        .header {
+            text-align: right;
+        }
+
+        .header h1 {
+            display: inline-block;
+            font-size: 50px;
+        }
     </style>
 
 </head>
 <body>
 <div class="container">
+    <div class="header">
+        <h1 class="highlight">Rehearsing Task</h1>
+    </div>
+
+    <div class="info">
+        <p><span class="highlight">Le Tran Anh Vu</span> - <span class="highlight">2000628</span></p>
+        <p><span class="highlight">Quan Vuong</span> - <span class="highlight">1801836</span></p>
+    </div>
     <div>
-        <h3>6. Find out a piece of Java code and make it appear on your web page the same way it appears in the text
+        <h3 class="q-header">1. What are the obligatory elements in each (X)HTML document?</h3>
+        <div>
+            <h5>Solution:</h5>
+            <div>
+                <p>An HTML document is composed of three parts: </p>
+                <ol style="list-style-type: decimal">
+                    <li>a line containing HTML version information,</li>
+                    <li>a declarative header section (delimited by the HEAD element),</li>
+                    <li>a body, which contains the document's actual content. The body may be implemented by the
+                        BODY element or the FRAMESET element.
+                    </li>
+                </ol>
+                <ul style="list-style-type: none">
+                    <li><span class="highlight">&lt! DOCTYPE html&gt</span>: declares the data type to display</li>
+                    <li><span class="highlight">&lthtml&gt and &lt/html&gt</span>: a pair of required tags, the
+                        top-level element, that encapsulates
+                        all the content of the HTML page.
+                    </li>
+                    <li><span class="highlight">&lthead&gt and &lt/head&gt</span>: declare website meta information such
+                        as page title, charset
+                    </li>
+                    <li><span class="highlight">&lttitle&gt and &lt/title&gt</span>: a pair of tags inside the
+                        &lthead&gt tag, used to declare the
+                        title of the page
+                    </li>
+                    <li><span class="highlight">&ltbody&gt and &lt/body&gt</span>: a tag pair used to encapsulate all
+                        the content that will display on
+                        the page
+                    </li>
+                    <li><span class="highlight">&lth1&gt &lt/h1&gt, &lth2&gt &lt/h2&gt</span>: format of heading data.
+                        There are usually 6 heading
+                        levels in HTML, ranging from &lth1&gt to &lth6&gt. In particular, &lth1&gt is the highest
+                        heading level and &lth6&gt is the lowest heading level.
+                    </li>
+                    <li><span class="highlight">&ltp&gt and &lt/p&gt</span>: a tag pair containing the web page's text
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="q-header">2: What’s DOCTYPE declaration meant for?</h3>
+        <div>
+            <h5>Solution:</h5>
+            <div>
+                <p>Document type declaration (DTD) is an instruction related to an SGML (Standard Generalized Markup
+                    Language) or an XML document (such as a web page) with a document type definition (for example, a
+                    specific version definition of HTML). Following the syntax of the document, it is usually presented
+                    as a short bookmark. (In general, &lt! DOCTYPE&gt is not an HTML tag, it is a declaration statement,
+                    used to declare the type of HTML document.)</p>
+                <p>Therefore, &lt! DOCTYPE&gt is not an HTML tag, it is a declaration statement, used to declare the
+                    type of HTML document. In HTML documents, &lt! DOCTYPE&gt must be placed before the &ltHTML&gt tag.
+                    According to the layout of HTML pages that do not follow the current HTML5 standards, DOCTYPE will
+                    have the task of "sniffing" or "converting", in particular DOCTYPE will determine the layout of the
+                    document pages. text / html in any way, such as "quirks mode" or "standards mode". For HTML5, which
+                    is an HTML standard not based on SGML, the use of DOCTYPE is only formal. Because browsers' primary
+                    task is to execute web pages based on HTML parsing rather than DTD parsing, browsers do not use DTDs
+                    and never access them. Moreover, modern browsers are competing fiercely to best support the HTML5
+                    standard, so the DOCTYPE in these browsers can be considered redundant.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="q-header">3. What is an URL?</h3>
+        <div>
+            <h5>Solution:</h5>
+            <div>
+                <p>
+                    URL stands for Uniform Resource Locator is the path or address used to refer to the resources on the
+                    Internet. Every resource stored on the Internet has its own address. Those addresses are called
+                    URLs. The URL is readable text instead of the IP address that the computer uses to contact the
+                    server. The URL allows hyperlinks for websites.
+                </p>
+                <p>A URL consists of many different parts:</p>
+                <ul>
+                    <li>The URL scheme is a connection protocol (eg, http, ftp) but can be a different name (eg news,
+                        mailto).
+                    </li>
+                    <li>World Wide Web: www (may not exist).</li>
+                    <li>Domain name - domain (Example: https://www.dna.fi/tuki-mokkulat)</li>
+                    <li>Port - port (Example: 80, 2082, 8080, 443, 7777, ...)</li>
+                    <li>Absolute link (Example: /products/karl-fazer-minun-oma-maitosuklaa-200g#/)</li>
+                    <li>Queries (to optimize for SEO and website security you should not leave on URL)</li>
+                </ul>
+                <p style="font-weight: bold; text-decoration: underline">Examples of use of absolute and relative
+                    URLs.</p>
+                <p><strong>Absolute:</strong> URL is a complete string including http: //, the domain name of the
+                    website, the path to the file.</p>
+                <blockquote>Example: &lta href https://www.example.com/xyz.html&gt</blockquote>
+                <p><strong>Relative:</strong>is a small part of the absolute path, usually the relative path is the path
+                    to the file. </p>
+                <blockquote>Example: &lta href = /xyz.html&gt</blockquote>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="q-header">4. How is it possible to define the text visible on the top of a browsers window and/or on
+            a tab?</h3>
+        <div>
+            <h5>Solution:</h5>
+            <div>
+                <p>The Document of the top level browsing context can be in one of the following visibility states:</p>
+                <p><strong>hidden</strong></p>
+
+                <p>The Document is not visible at all on any screen.</p>
+                <p><strong>visible</strong></p>
+
+                <p>The Document is at least partially visible on at least one screen. This is the same condition under
+                    which the hidden attribute is set to false.</p>
+                <p>The visibility states are reflected in the API via the VisibilityState enum.</p>
+                <p>On getting, the visibilityState attribute the user agent must run the steps to determine the
+                    visibility state:</p>
+
+                <ul>
+                    <li>Let doc be the Document of the top level browsing context.</li>
+                    <li>If the defaultView of doc is null, return hidden.</li>
+                    <li>Otherwise, return the VisibilityState value that best matches the visibility state of doc:
+                        <ul>
+                            <li>Return "visible" if:
+                                <ul>
+                                    <li>The user agent is not minimised and doc is the foreground tab.</li>
+                                    <li>The user agent is fully obscured by an accessibility tool, like a magnifier, but
+                                        a view of the doc is shown.
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>Return "hidden" if:
+                                <ul>
+                                    <li>The user agent is minimized.</li>
+                                    <li>The user agent is not minimized, but doc is on a background tab.</li>
+                                    <li>The user agent is to unload doc.</li>
+                                    <li>The Operating System lock screen is shown.</li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>To accommodate assistive technologies that are typically full screen but still show a view of the
+                    page, when applicable, on getting, the [ visibilityState attribute may return visible, instead of
+                    hidden, when the user agent is not minimized but is fully obscured by other applications.</p>
+                <p><strong>How about adding an icon next to the title? Give examples.
+                    In order to add icon to the webpage title, it is possible to use this syntax:
+                </strong></p>
+                <p>In order to add icon to the webpage title, it is possible to use this syntax:</p>
+                <p style="display: inline-block" class="highlight">&ltlink rel="icon" href="icon_path"
+                    type="image/icon_type"&gt</p>
+                <p>Code:</p>
+                <pre>
+    &lt!DOCTYPE html&gt
+    &lthtml&gt
+        &lthead&gt
+            &ltmeta charset="utf-8"/&gt
+
+            &lttitle&gt
+                GeeksforGeeks icon
+            &lt/title&gt
+
+            &lt!-- add icon link --&gt
+            &ltlink rel="icon" href=
+                    "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png"
+                  type="image/x-icon"&gt
+        &lt/head&gt
+    &lt/html&gt
+                    </pre>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="q-header">5. How do block level and inline level elements differ from each other? Give examples.</h3>
+        <div>
+            <h5>Answer:</h5>
+            <div>
+                <p>Firstly, a &ltspan&gt element is used as an inline element and a &ltdiv&gt element as a block level
+                    element.</p>
+                <h5>Block elements have the following default properties:</h5>
+
+                <p>If the width, parameter is not specified, the width of the block will automatically expand to the
+                    limit of its outer element (parent container)</p>
+                <p>It is possible to specify <span class="highlight">margins</span> and <span
+                        class="highlight">padding</span>parameters</p>
+                <p>If there is no parameter to specify the height, the block will automatically extend the limit by the
+                    height of its child elements.</p>
+                <p>When standing next to each other, the blocks will stack on top of each other.</p>
+                <p>Cannot use <span class="highlight">vertical-align</span> attribute
+                    <br>
+                    -&gt Thus, for block-level elements, there is no need to set parameters width: 100%, as it is
+                    already the default attribute.</p>
+
+                <p>Some html elements belong to block-level:
+                    <br> <span class="highlight"> &ltdiv&gt, &ltform&gt, &ltheader&gt, &ltnav&gt, &ltul&gt, &ltli&gt, &lth1&gt.</span>
+                </p>
+
+                <h5>Inline elements have the following default properties:</h5>
+                <p>Always on one line or content, no default attribute <span class="highlight">clear</span></p>
+                <p>Use the <span class="highlight">white-space</span> attribute as text in CSS</p>
+                <p>Cannot apply <span class="highlight">margin-top</span> and <span
+                        class="highlight">margin-bottom</span> parameters, but <span
+                        class="highlight">margin-left</span> , <span class="highlight">margin-right</span> and full set
+                    of <span class="highlight">padding</span></p>
+                <p>Cannot apply <span class="highlight">width</span> and <span class="highlight">height</span>
+                    attribute.</p>
+                <p>If using the <span class="highlight">float</span> attribute, inline elements will automatically
+                    become block-level</p>
+                <p>Using <span class="highlight">vertical-align</span> as in CSS</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <h3 class="q-header">6. Find out a piece of Java code and make it appear on your web page the same way it
+            appears in the text
             editor.</h3>
         <div>
             <h5>Solution:</h5>
             <pre>
-                public class MyClass {
-                    static void myMethod() {
-                    System.out.println("I just got executed!");
-                    }
+    public class MyClass {
+        static void myMethod() {
+        System.out.println("I just got executed!");
+        }
 
-                    public static void main(String[] args) {
-                        myMethod();
-                    }
-                }
+        public static void main(String[] args) {
+            myMethod();
+        }
+    }
             </pre>
         </div>
     </div>
 
     <div>
-        <h3>7.There are three different ways of adding CSS styles on an (X)HTML page. How? What are the benefits of each
+        <h3 class="q-header">7.There are three different ways of adding CSS styles on an (X)HTML page. How? What are the
+            benefits of each
             way? </h3>
         <div>
             <ul>
@@ -136,21 +436,21 @@
         </div>
     </div>
     <div>
-        <h3>8. How to create a nested list looking more or less as follows:</h3>
+        <h3 class="q-header">8. How to create a nested list looking more or less as follows:</h3>
         <div>
             <h5>Solution:</h5>
             <p>Placing the snippet below in between body tag of html file.</p>
             <pre>
-                &ltul style="list-style-type: square;"&gt
-                    &ltli&gtBanana&lt/li&gt
-                    &ltli&gtApple
-                    &ltol style="list-style-type: lower-alpha"&gt
-                        &ltli&gtPinja&lt/li&gt
-                    &ltli&gtSamo&lt/li&gt
-                    &lt/ol&gt
-                    &lt/li&gt
-                    &ltli&gtOrange&lt/li&gt
-                &lt/ul&gt
+    &ltul style="list-style-type: square;"&gt
+        &ltli&gtBanana&lt/li&gt
+        &ltli&gtApple
+        &ltol style="list-style-type: lower-alpha"&gt
+            &ltli&gtPinja&lt/li&gt
+        &ltli&gtSamo&lt/li&gt
+        &lt/ol&gt
+        &lt/li&gt
+        &ltli&gtOrange&lt/li&gt
+    &lt/ul&gt
             </pre>
         </div>
 
@@ -173,7 +473,8 @@
     </div>
 
     <div>
-        <h3>9.What are selectors in CSS? Give at least five examples of different kind of selectors (basic type
+        <h3 class="q-header">9.What are selectors in CSS? Give at least five examples of different kind of selectors
+            (basic type
             selectors, class, id, and attribute selectors). Show them in use on your (X)HTML page. </h3>
         <div>
             <p>
@@ -182,7 +483,7 @@
             </p>
             <p>Example: (teacher can review in the &ltstyle&gt tag in this html file)</p>
             <ul class="selector-css">
-                <li class="blue-text">Class style</li>
+                <li style="display: inline-block" class="highlight">Class style</li>
                 <li id="underline">Id Style</li>
                 <li custom-attr="red">Attribute style</li>
                 <li id="li-hover">hover style</li>
@@ -193,7 +494,7 @@
     </div>
 
     <div>
-        <h3>10. Create at least the following kinds of two links on your web page: </h3>
+        <h3 class="q-header">10. Create at least the following kinds of two links on your web page: </h3>
         <ol style="list-style-type: lower-alpha">
             <li style="margin-bottom: 10px">
                 <p>
@@ -216,7 +517,7 @@
                 <p>Solution:</p>
                 <div>
                     <a class="image-link" target="_blank" href="https://letrananhvu.github.io/"/>
-                        <img src="https://letrananhvu.github.io/img/react-restaurant.png" alt="portfolio-react">
+                    <img src="https://letrananhvu.github.io/img/react-restaurant.png" alt="portfolio-react">
                     </a>
                 </div>
             </li>
